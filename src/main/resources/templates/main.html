@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <header class="header" th:if="${!isLogged}">
+        <a href="/new"><button>Создать</button></a>
+        <a href="/login"><button>Войти</button></a>
+    </header>
+    <header class="header" th:if="${isLogged}">
+        <a href="/change"><button>Изменить</button></a>
+        <a href="/logout "><button>Выйти</button></a>
+    </header>
+    <section th:unless="${emptyPersons}">
+        <article>
+            <p th:text="${person.login}"></p>
+            <p th:text="${person.title}"></p>
+            <br>
+        </article>
+    </section>
+    <section th:if="${emptyPersons}">
+        <article>
+            <p>Партнеры кончились</p>
+        </article>
+    </section>
+    <aside th:unless="${emptyPersons}">
+        <a href="/dislike"><button>dislike</button></a>
+        <a href="/like"><button>like</button></a>
+    </aside>
+    <section th:if="${isLogged}">
+        <br/>
+        <article>
+            <b>Любимицы</b>
+            <div th:each="match: ${matches}">
+                <a th:href="'/persons/' + ${match.uniqueID}"><p th:text="${match.login}"></p></a>
+            </div>
+        </article>
+    </section>
+
+</body>
+</html>

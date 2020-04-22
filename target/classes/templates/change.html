@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <a href="/"><button>Вернуться назад</button></a>
+    <h1>Изменение описания</h1>
+    <form action="#" th:action="@{/change}" th:object="${person}" method="post">
+        <p>
+            Какіе вы и что вы ищите?
+            <input type="text" th:field="*{title}" required>
+        </p>
+        <p>
+            <input type="submit" value="Изменить">
+            <input type="reset" value="Сбросить">
+        </p>
+    </form>
+    <p>
+        <b>Например:</b>
+        "желает отойти от дел в уютной усадьбе с любимой женщиной"
+    </p>
+</body>
+</html>

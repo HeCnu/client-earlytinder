@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <a href="/"><button>Вернуться назад</button></a>
+    <h1>Форма входа</h1>
+    <form action="#" th:action="@{/login}" th:object="${person}" method="post">
+        <p>
+            Как вас величать?
+            <input type="text" th:field="*{login}" required>
+        </p>
+        <p>
+            Ваш секретный шифръ?
+            <input type="password" th:field="*{password}" required>
+        </p>
+        <p>
+            <input type="submit" value="Войти">
+            <input type="reset" value="Сбросить">
+        </p>
+    </form>
+    <p>
+        <b>Например:</b>
+        "Мечтательный анархистъ"  -  д0л0йцарR
+    </p>
+</body>
+</html>

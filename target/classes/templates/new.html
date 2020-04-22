@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <a href="/"><button>Вернуться назад</button></a>
+    <h1>Форма создания анкеты</h1>
+    <form action="#" th:action="@{/new}" th:object="${person}" method="post">
+        <p>
+            Вы сударь иль сударыня?
+            <select th:field="*{male}" required>
+                <option th:value="''" th:text="'Укажите пол'" disabled></option>
+                <option th:value="'true'" th:text="Сударь"></option>
+                <option th:value="'false'" th:text="Сударыня"></option>
+            </select>
+        </p>
+        <p>
+            Как вас величать?
+            <input type="text" th:field="*{login}" required>
+        </p>
+        <p>
+            Ваш секретный шифръ?
+            <input type="password" th:field="*{password}" required>
+        </p>
+        <p>
+            Какіе вы и что вы ищите?
+            <input type="text" th:field="*{title}" required>
+        </p>
+        <p>
+            <input type="submit" value="Создать">
+            <input type="reset" value="Сбросить">
+        </p>
+    </form>
+    <p>
+        <b>Например:</b>
+        Сударь "Мечтательный анархистъ" д0л0йцарR "желает отойти от дел в уютной усадьбе с любимой женщиной"
+    </p>
+</body>
+</html>

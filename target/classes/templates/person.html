@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <header>
+        <a href="/"><button>Вернуться на главную</button></a>
+    </header>
+    <section>
+        <p><b th:text="${person.login}"></b></p>
+        <p th:text="${person.title}"></p>
+    </section>
+</body>
+</html>

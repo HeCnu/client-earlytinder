@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <header>
+        <a href="/"><button>Вернуться на главную</button></a>
+    </header>
+    <section>
+        <p th:text="'Вы успешно изменили описание, ' + ${name} + '!'"></p>
+    </section>
+</body>
+</html>
